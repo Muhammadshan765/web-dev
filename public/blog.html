@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virat Kohli - The King of Cricket</title>
+    <link href="/css/style.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+</head>
+<body class="bg-primary text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-secondary/80 backdrop-blur-sm z-50 shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="/" class="text-2xl font-bold hover:text-accent transition-colors">Virat Kohli</a>
+                <div class="space-x-6">
+                    <a href="/" class="hover:text-accent transition-colors">Home</a>
+                    <a href="/blog" class="hover:text-accent transition-colors">Achievements</a>
+                    <a href="/projects" class="hover:text-accent transition-colors">Records</a>
+                    <a href="/contact" class="hover:text-accent transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-90"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h1 class="text-6xl font-bold mb-4 animate-fade-in">Virat Kohli</h1>
+                <p class="text-2xl text-gray-300 max-w-2xl mx-auto animate-slide-up">
+                    The Run Machine • The Chase Master • The King of Cricket
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <!-- Blog Categories -->
+            <div class="flex flex-wrap justify-center gap-4 mb-16">
+                <button class="category-btn active px-6 py-3 rounded-full bg-accent text-white font-medium transform transition-all duration-300 hover:scale-105 hover:shadow-lg" data-category="all">
+                    All Achievements
+                </button>
+                <button class="category-btn px-6 py-3 rounded-full bg-secondary text-white font-medium transform transition-all duration-300 hover:scale-105 hover:shadow-lg" data-category="achievements">
+                    Career Highlights
+                </button>
+                <button class="category-btn px-6 py-3 rounded-full bg-secondary text-white font-medium transform transition-all duration-300 hover:scale-105 hover:shadow-lg" data-category="records">
+                    World Records
+                </button>
+                <button class="category-btn px-6 py-3 rounded-full bg-secondary text-white font-medium transform transition-all duration-300 hover:scale-105 hover:shadow-lg" data-category="captaincy">
+                    Captaincy Era
+                </button>
+                <button class="category-btn px-6 py-3 rounded-full bg-secondary text-white font-medium transform transition-all duration-300 hover:scale-105 hover:shadow-lg" data-category="fitness">
+                    Fitness Journey
+                </button>
+            </div>
+
+            <!-- Blog Posts Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-posts">
+                <!-- Blog posts will be loaded dynamically -->
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-16">
+                <button id="load-more" class="bg-accent px-8 py-4 rounded-full text-white font-medium transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                    Load More Achievements
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-secondary">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center">Career Statistics</h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="stat-card bg-primary p-6 rounded-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                    <div class="text-4xl font-bold text-accent mb-2">75</div>
+                    <div class="text-gray-300">International Centuries</div>
+                </div>
+                <div class="stat-card bg-primary p-6 rounded-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                    <div class="text-4xl font-bold text-accent mb-2">13,000+</div>
+                    <div class="text-gray-300">ODI Runs</div>
+                </div>
+                <div class="stat-card bg-primary p-6 rounded-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                    <div class="text-4xl font-bold text-accent mb-2">8,000+</div>
+                    <div class="text-gray-300">T20I Runs</div>
+                </div>
+                <div class="stat-card bg-primary p-6 rounded-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                    <div class="text-4xl font-bold text-accent mb-2">50+</div>
+                    <div class="text-gray-300">Man of the Match</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="/js/blog.js"></script>
+</body>
+</html> 

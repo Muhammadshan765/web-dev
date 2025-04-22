@@ -1,0 +1,162 @@
+/* Base styles */
+:root {
+    --primary-color: #000000;
+    --secondary-color: #FF0000;
+    --accent-color: #FFD700;
+    --text-color: #FFFFFF;
+    --light-bg: #1A1A1A;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-color: var(--primary-color);
+}
+
+/* Cricket ball animation styles */
+.cricket-ball {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(45deg, #ff6f00, #ffd700);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+/* RCB-themed animations */
+@keyframes rcbPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes rcbGlow {
+    0% { box-shadow: 0 0 5px var(--secondary-color); }
+    50% { box-shadow: 0 0 20px var(--secondary-color); }
+    100% { box-shadow: 0 0 5px var(--secondary-color); }
+}
+
+/* Hero section styles */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color), #1A1A1A);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,0,0,0.1)" stroke-width="1"/></svg>') repeat;
+    opacity: 0.1;
+}
+
+/* Stats and Records cards */
+.stat-card, .record-card {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border: 1px solid var(--secondary-color);
+}
+
+.stat-card:hover, .record-card:hover {
+    transform: translateY(-5px);
+    animation: rcbGlow 2s infinite;
+}
+
+.stat-card::before, .record-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+}
+
+/* RCB-themed buttons */
+.btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+}
+
+.btn:hover {
+    background: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* Cricket-themed form elements */
+input, textarea {
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.1);
+}
+
+/* Enhanced animations */
+@keyframes batSwing {
+    0% { transform: rotate(-15deg) scale(1); }
+    50% { transform: rotate(15deg) scale(1.1); }
+    100% { transform: rotate(-15deg) scale(1); }
+}
+
+@keyframes ballBounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.1); }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .hero {
+        padding: 4rem 1rem;
+    }
+    
+    .stat-card, .record-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Loading animation */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading::after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--secondary-color);
+    border-top: 5px solid var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+} 
